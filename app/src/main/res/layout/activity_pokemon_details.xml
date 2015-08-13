@@ -1,0 +1,77 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+    <data>
+        <import type="android.view.View"/>
+        <variable name="pokemonViewModel" type="com.ivankocijan.hellomvvm.viewModel.PokemonDetailsViewModel"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:layout_height="match_parent">
+
+
+            <TextView
+                    android:text="@{pokemonViewModel.name}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_large"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    tools:text="Pokemon name"/>
+            <TextView
+                    android:text="@{pokemonViewModel.attack}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"
+                    tools:text="Pokemon attack"/>
+
+            <TextView
+                    android:text="@{pokemonViewModel.defense}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"
+                    tools:text="Pokemon defense"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:background="#55000000"
+                      android:visibility="@{pokemonViewModel.loader}"
+                      android:gravity="center">
+
+            <ProgressBar android:layout_width="100dp"
+                         android:layout_height="100dp"
+                         android:visibility="@{pokemonViewModel.loader}"/>
+
+        </LinearLayout>
+
+        <TextView
+                android:text="@{pokemonViewModel.error}"
+                android:visibility="@{pokemonViewModel.showError}"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_large"
+                tools:text="Pokemon defense"/>
+
+
+    </RelativeLayout>
+
+
+</layout>

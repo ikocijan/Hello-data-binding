@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Hello data binding</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="catch_rate">"Catch rate: "</string>
+    <string name="attack">Attack:</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="ok">OK</string>
+    <string name="title_activity_pokemon_list">PokemonListActivity</string>
+    <string name="defense">Defense</string>
+</resources>
